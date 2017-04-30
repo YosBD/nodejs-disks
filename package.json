@@ -1,10 +1,10 @@
 {
   "author": "Shaun Hevey (forked by Yossi Ben-David)",
-  "name": "nodejs-disks-win32",
+  "name": "yosbd-nodejs-disks",
   "description": "[Forked by YosBD] Nodejs module to gets current disk information from Server hosting nodejs application tested on OSX and ubuntu adapted from node-diskfree see Readme",
-  "version": "0.2.2",
+  "version": "0.5.2",
   "license": "MIT",
-  "main": "./lib/disks.js",
+  "main": "./lib/disks",
   "scripts": {
     "test": "mocha test/ -R spec -s 300 -t 3000"
   },
@@ -19,10 +19,12 @@
     "volumes",
     "harddisk"
   ],
-  "main": "./lib/disks",
   "dependencies": {
     "async": "~2.1.4",
-    "numeral": "~2.0.4"
+    "install": "^0.8.9",
+    "npm": "^4.5.0",
+    "numeral": "~2.0.4",
+    "sync-exec": "^0.6.2"
   },
   "os": [
     "darwin",

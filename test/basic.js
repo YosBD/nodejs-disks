@@ -15,63 +15,43 @@ describe('Basic Interface', function(){
 
 
 	it("mount should not be empty", function(done){
-		disk.drives(function (err, drives) {
-			should.not.exist(err);
-			disk.drivesDetail(drives, function (err, diskResults) {
-				should.not.exist(err);
-				diskResults.should.be.Array;
-				diskResults[0].mountpoint.should.not.containEql("\n");
-				done();
-			});
-		});
+		var drives = disk.drives();
+        var diskResults = disk.drivesDetail(drives);
+        diskResults.should.be.Array;
+        diskResults[0].mountpoint.should.not.containEql("\n");
+        done();
 	});
 	
 	it("mount free percentage should be a number", function(done){
-		disk.drives(function (err, drives) {
-			should.not.exist(err);
-			disk.drivesDetail(drives, function (err, diskResults) {
-				should.not.exist(err);
-				diskResults.should.be.Array;
-				parseInt(diskResults[0].freePer).should.be.Number;
-				done();
-			});
-		});
+		var drives = disk.drives();
+		var diskResults = disk.drivesDetail(drives);
+		diskResults.should.be.Array;
+		diskResults[0].freePer.should.be.Number;
+		done();
 	});
-	
+
 	it("mount used percentage should be a number", function(done){
-		disk.drives(function (err, drives) {
-			should.not.exist(err);
-			disk.drivesDetail(drives, function (err, diskResults) {
-				should.not.exist(err);
-				diskResults.should.be.Array;
-				parseInt(diskResults[0].usedPer).should.be.Number;
-				done();
-			});
-		});
+        var drives = disk.drives();
+        var diskResults = disk.drivesDetail(drives);
+        diskResults.should.be.Array;
+        diskResults[0].usedPer.should.be.Number;
+        done();
 	});
 
 
 	it("mount total space should be a number", function(done){
-		disk.drives(function (err, drives) {
-			should.not.exist(err);
-			disk.drivesDetail(drives, function (err, diskResults) {
-				should.not.exist(err);
-				diskResults.should.be.Array;
-				parseInt(diskResults[0].usedPer).should.be.Number;
-				done();
-			});
-		});
+        var drives = disk.drives();
+        var diskResults = disk.drivesDetail(drives);
+        diskResults.should.be.Array;
+        diskResults[0].usedPer.should.be.Number;
+        done();
 	});
 	
 	it("mount used space should be a number", function(done){
-		disk.drives(function (err, drives) {
-			should.not.exist(err);
-			disk.drivesDetail(drives, function (err, diskResults) {
-				should.not.exist(err);
-				diskResults.should.be.Array;
-				parseInt(diskResults[0].used).should.be.Number;
-				done();
-			});
-		});
+        var drives = disk.drives();
+        var diskResults = disk.drivesDetail(drives);
+        diskResults.should.be.Array;
+        diskResults[0].used.should.be.Number;
+        done();
 	});
 });
